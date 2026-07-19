@@ -1,6 +1,6 @@
 # Exam Trainer — STATUS
 
-Last updated: **2026-07-19** by **cursor** (session-close)
+Last updated: **2026-07-19** by **claude-code** (browser smoke-test)
 
 ## App health
 
@@ -8,9 +8,11 @@ Last updated: **2026-07-19** by **cursor** (session-close)
 |------|--------|
 | Shell (index, CSS, router) | OK |
 | `js/render.js` (`rich`/`el`/`shuffle`) | OK (clean UTF-8) |
-| Quiz / flashcards / steps | Implemented |
-| PWA (manifest + SW) | Present |
-| Git (`exam-trainer/`) | Initialized — see latest commit on `main` |
+| Quiz / flashcards / steps | Implemented **and browser-verified** (M4 done) |
+| KaTeX (inline, display, matrices) | Verified rendering correctly, light + dark |
+| PWA (manifest + SW) | Present, not yet verified installable (no HTTPS/localhost prod test) |
+| `localStorage` progress | Verified persists across full reloads; day-streak logic confirmed |
+| Git (`exam-trainer/`) | Initialized, 1 local commit on `main` — **no remote yet** (M5) |
 | Exam dates in `courses.json` | All `null` (see MANUAL-TASKS M1) |
 
 ## Question banks
@@ -34,10 +36,11 @@ Last updated: **2026-07-19** by **cursor** (session-close)
 1. M1 — set `examDate` values (user)
 2. Grow banks from past-exam PDFs (agent-doable once targeting a course)
 3. M2 — real mining materials → replace seed
-4. M4 — browser smoke-test
-5. M3/M5 — root git decision / remote push (user)
+4. ~~M4 — browser smoke-test~~ ✅ done 2026-07-19
+5. M3/M5 — root git decision / remote push + GitHub Pages (user)
 
 ## Ownership notes
 
 - App scaffold + most banks: **claude-code**
 - `render.js` cleanup, mining seed, coordination docs, ACADEMY session-close skill: **cursor**
+- Browser smoke-test (M4): **claude-code**
