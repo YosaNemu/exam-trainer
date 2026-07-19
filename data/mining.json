@@ -1,0 +1,179 @@
+{
+  "course": "mining",
+  "questions": [
+    {
+      "id": "min-mcq-01",
+      "type": "mcq",
+      "topic": "βασικές έννοιες",
+      "difficulty": 1,
+      "question": "Ποια είναι η σωστή διάκριση;",
+      "choices": [
+        "Ταξινόμηση (classification) = επιβλεπόμενη· συσταδοποίηση (clustering) = μη επιβλεπόμενη",
+        "Και οι δύο είναι πάντα επιβλεπόμενες",
+        "Clustering χρειάζεται ετικέτες κλάσης· classification όχι",
+        "Association rules = είδος regression"
+      ],
+      "answer": 0,
+      "explanation": "Στην **classification** μαθαίνεις από παραδείγματα με ετικέτα. Στο **clustering** ομαδοποιείς χωρίς ετικέτες. Τα association rules βρίσκουν συχνά σύνολα αντικειμένων (π.χ. market basket).",
+      "source": "Θεωρία μαθήματος — starter (Εξόρυξη κενή· curriculum seed)"
+    },
+    {
+      "id": "min-mcq-02",
+      "type": "mcq",
+      "topic": "αξιολόγηση",
+      "difficulty": 2,
+      "question": "Για δυαδικό ταξινομητή: $TP=40$, $FP=10$, $FN=10$, $TN=40$. Ποιο είναι το precision και το recall;",
+      "choices": [
+        "precision $=0.8$, recall $=0.8$",
+        "precision $=0.5$, recall $=0.8$",
+        "precision $=0.8$, recall $=0.5$",
+        "precision $=0.9$, recall $=0.9$"
+      ],
+      "answer": 0,
+      "explanation": "$\\mathrm{precision} = \\frac{TP}{TP+FP} = \\frac{40}{50} = 0.8$. $\\mathrm{recall} = \\frac{TP}{TP+FN} = \\frac{40}{50} = 0.8$. Το F1 είναι ο αρμονικός μέσος τους.",
+      "source": "Θεωρία μαθήματος — starter"
+    },
+    {
+      "id": "min-mcq-03",
+      "type": "mcq",
+      "topic": "association rules",
+      "difficulty": 2,
+      "question": "Για τον κανόνα $A \\Rightarrow B$: support $=0.2$, confidence $=0.5$, $P(B)=0.4$. Ποιο είναι το lift;",
+      "choices": ["$1.25$", "$0.5$", "$2.5$", "$0.08$"],
+      "answer": 0,
+      "explanation": "$\\mathrm{lift}(A\\Rightarrow B) = \\dfrac{\\mathrm{confidence}}{P(B)} = \\dfrac{0.5}{0.4} = 1.25 > 1$ → θετική συσχέτιση (όχι ανεξαρτησία).",
+      "source": "Θεωρία μαθήματος — starter"
+    },
+    {
+      "id": "min-mcq-04",
+      "type": "mcq",
+      "topic": "δέντρα απόφασης",
+      "difficulty": 2,
+      "question": "Σε δέντρο απόφασης, το Information Gain ενός split είναι:",
+      "choices": [
+        "$IG = H(\\text{parent}) - \\sum_i \\frac{|S_i|}{|S|} H(S_i)$",
+        "$IG = H(\\text{parent}) + H(\\text{children})$",
+        "Το Gini του φύλλου",
+        "Πάντα ίσο με το support"
+      ],
+      "answer": 0,
+      "explanation": "Κερδίζεις πληροφορία όσο **μειώνεται** η εντροπία μετά το split (σταθμισμένος μέσος εντροπιών παιδιών). Το ID3/C4.5 μεγιστοποιούν IG (ή gain ratio).",
+      "source": "Θεωρία μαθήματος — starter"
+    },
+    {
+      "id": "min-mcq-05",
+      "type": "mcq",
+      "topic": "k-means",
+      "difficulty": 2,
+      "question": "Ποια δήλωση για τον k-means είναι σωστή;",
+      "choices": [
+        "Ελαχιστοποιεί το άθροισμα τετραγώνων αποστάσεων από τα κέντρα· το $k$ το ορίζεις εσύ· ευαίσθητος σε outliers/αρχικοποίηση",
+        "Βρίσκει αυτόματα το βέλτιστο $k$",
+        "Δουλεύει μόνο με κατηγορικά δεδομένα χωρίς απόσταση",
+        "Εγγυάται πάντα το ολικό ελάχιστο"
+      ],
+      "answer": 0,
+      "explanation": "Ο k-means είναι τοπικός βελτιστοποιητής (Lloyd). Το elbow/silhouette βοηθούν στην επιλογή $k$, αλλά δεν «βγαίνει» από τον αλγόριθμο.",
+      "source": "Θεωρία μαθήματος — starter"
+    },
+    {
+      "id": "min-fc-01",
+      "type": "flashcard",
+      "topic": "εντροπία",
+      "front": "Εντροπία Shannon για δυαδική κλάση με αναλογία $p$; Πότε μεγιστοποιείται;",
+      "back": "$$H = -p\\log_2 p - (1-p)\\log_2(1-p)$$\nΜέγιστη στο $p=0.5$ ($H=1$ bit). Μηδέν όταν η κλάση είναι καθαρή ($p\\in\\{0,1\\}$).",
+      "source": "Θεωρία — starter"
+    },
+    {
+      "id": "min-fc-02",
+      "type": "flashcard",
+      "topic": "overfitting",
+      "front": "Τι είναι overfitting και πώς το εντοπίζεις / περιορίζεις;",
+      "back": "Μοντέλο που μαθαίνει θόρυβο του train set → υψηλό train accuracy, χαμηλό test/validation.\n\nΑντιμετώπιση: train/val/test split, cross-validation, early stopping, regularization, pruning (δέντρα), λιγότερα features, περισσότερο data.",
+      "source": "Θεωρία — starter"
+    },
+    {
+      "id": "min-fc-03",
+      "type": "flashcard",
+      "topic": "Naive Bayes",
+      "front": "Γιατί λέγεται «naive» ο Naive Bayes; Τύπος πρόβλεψης;",
+      "back": "Υποθέτει **υπό συνθήκη ανεξαρτησία** features δεδομένης της κλάσης.\n$$P(C\\mid x) \\propto P(C)\\prod_i P(x_i\\mid C)$$\nΠαρά την υπόθεση, συχνά δουλεύει καλά σε κείμενο (bag-of-words).",
+      "source": "Θεωρία — starter"
+    },
+    {
+      "id": "min-fc-04",
+      "type": "flashcard",
+      "topic": "αποστάσεις",
+      "front": "Euclidean vs Manhattan vs Cosine — πότε τι;",
+      "back": "• **Euclidean** $L_2$: γεωμετρική απόσταση (k-means default).\n• **Manhattan** $L_1$: πιο ανθεκτική σε outliers σε υψηλές διαστάσεις.\n• **Cosine**: ομοιότητα κατεύθυνσης (κείμενο, sparse vectors) — αγνοεί το μέγεθος του διανύσματος.",
+      "source": "Θεωρία — starter"
+    },
+    {
+      "id": "min-fc-05",
+      "type": "flashcard",
+      "topic": "PCA",
+      "front": "Τι κάνει η PCA σε μία πρόταση; Τι μεγιστοποιεί;",
+      "back": "Γραμμική προβολή σε νέους άξονες (κύριες συνιστώσες) που **μεγιστοποιούν τη διακύμανση** (ιδιοδιανύσματα του covariance / SVD).\n\nΧρήση: μείωση διαστάσεων, οπτικοποίηση, αποθορυβοποίηση — όχι πάντα καλύτερη για classification.",
+      "source": "Θεωρία — starter"
+    },
+    {
+      "id": "min-steps-01",
+      "type": "steps",
+      "topic": "confusion matrix",
+      "difficulty": 2,
+      "title": "Από confusion matrix σε F1",
+      "intro": "Δυαδικός ταξινομητής σε test set $N=100$:\n\n• Actual +, Pred +: **30**\n• Actual +, Pred −: **10**\n• Actual −, Pred +: **5**\n• Actual −, Pred −: **55**\n\nΥπολόγισε τα βασικά μέτρα αξιολόγησης βήμα-βήμα.",
+      "source": "Starter — τυπικό μοτίβο εξετάσεων",
+      "steps": [
+        {
+          "prompt": "Πόσα είναι τα $TP$, $FP$, $FN$, $TN$;",
+          "choices": [
+            "TP=30, FP=5, FN=10, TN=55",
+            "TP=30, FP=10, FN=5, TN=55",
+            "TP=55, FP=5, FN=10, TN=30",
+            "TP=30, FP=5, FN=55, TN=10"
+          ],
+          "answer": 0,
+          "explanation": "TP = σωστά θετικά (30). FP = αρνητικά που προβλέφθηκαν θετικά (5). FN = θετικά που προβλέφθηκαν αρνητικά (10). TN = 55."
+        },
+        {
+          "prompt": "Accuracy $= (TP+TN)/N$; αριθμητικά;",
+          "input": { "value": 0.85, "tolerance": 0.001, "unit": "" },
+          "explanation": "$(30+55)/100 = 0.85$. Προσοχή: σε imbalanced data το accuracy μπορεί να ξεγελάει."
+        },
+        {
+          "prompt": "Precision και recall (ως δεκαδικά); F1 = αρμονικός μέσος. Ποιο είναι το F1;",
+          "input": { "value": 0.8, "tolerance": 0.01, "unit": "" },
+          "explanation": "precision $=30/35 \\approx 0.857$, recall $=30/40 = 0.75$. $$F_1 = 2\\cdot\\frac{0.857\\cdot 0.75}{0.857+0.75} \\approx 0.80$$."
+        }
+      ]
+    },
+    {
+      "id": "min-steps-02",
+      "type": "steps",
+      "topic": "association rules",
+      "difficulty": 2,
+      "title": "Support & confidence από καλάθια",
+      "intro": "5 συναλλαγές:\n1. {ψωμί, γάλα}\n2. {ψωμί, πάνα, μπύρα, αυγά}\n3. {γάλα, πάνα, μπύρα, αναψυκτικό}\n4. {ψωμί, γάλα, πάνα, μπύρα}\n5. {ψωμί, γάλα, πάνα, αναψυκτικό}\n\nΜελέτησε τον κανόνα $\\{\\text{πάνα}\\} \\Rightarrow \\{\\text{μπύρα}\\}$.",
+      "source": "Starter — κλασικό market-basket παράδειγμα",
+      "steps": [
+        {
+          "prompt": "Σε πόσες συναλλαγές εμφανίζεται το itemset {πάνα, μπύρα};",
+          "input": { "value": 3, "tolerance": 0, "unit": "" },
+          "explanation": "Συναλλαγές 2, 3 και 4 — και οι τρεις περιέχουν πάνα και μπύρα."
+        },
+        {
+          "prompt": "Support({πάνα, μπύρα}) = count / 5. Τι τιμή;",
+          "choices": ["$0.6$", "$0.4$", "$0.8$", "$0.2$"],
+          "answer": 0,
+          "explanation": "$3/5 = 0.6$."
+        },
+        {
+          "prompt": "Confidence$(\\{\\text{πάνα}\\}\\Rightarrow\\{\\text{μπύρα}\\}) = support(\\{πάνα,μπύρα\\})/support(\\{πάνα\\})$. Η πάνα εμφανίζεται σε 4 συναλλαγές. Confidence;",
+          "input": { "value": 0.75, "tolerance": 0.01, "unit": "" },
+          "explanation": "$support(\\{πάνα\\})=4/5=0.8$. Confidence $=0.6/0.8 = \\mathbf{0.75}$."
+        }
+      ]
+    }
+  ]
+}

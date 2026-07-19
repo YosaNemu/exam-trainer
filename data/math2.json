@@ -1,0 +1,111 @@
+{
+  "course": "math2",
+  "questions": [
+    {
+      "id": "m2-mcq-01",
+      "type": "mcq",
+      "topic": "μερικές παράγωγοι",
+      "difficulty": 1,
+      "question": "Για $f(x,y) = x^2 y + e^{xy}$, η μερική παράγωγος $\\dfrac{\\partial f}{\\partial x}$ είναι:",
+      "choices": ["$2xy + y\\,e^{xy}$", "$x^2 + x\\,e^{xy}$", "$2xy + e^{xy}$", "$2x + y\\,e^{xy}$"],
+      "answer": 0,
+      "explanation": "Παραγωγίζουμε ως προς $x$ με το $y$ σταθερό: $\\frac{\\partial}{\\partial x}(x^2y) = 2xy$ και $\\frac{\\partial}{\\partial x}e^{xy} = y\\,e^{xy}$ (κανόνας αλυσίδας).",
+      "source": "Θεωρία μαθήματος — starter"
+    },
+    {
+      "id": "m2-mcq-02",
+      "type": "mcq",
+      "topic": "διπλά ολοκληρώματα",
+      "difficulty": 2,
+      "question": "Το $\\displaystyle\\iint_D dx\\,dy$ όπου $D$ ο δίσκος $x^2+y^2 \\leq 4$, σε πολικές συντεταγμένες γίνεται:",
+      "choices": ["$\\displaystyle\\int_0^{2\\pi}\\!\\!\\int_0^2 r\\,dr\\,d\\theta = 4\\pi$", "$\\displaystyle\\int_0^{2\\pi}\\!\\!\\int_0^2 dr\\,d\\theta = 4\\pi$", "$\\displaystyle\\int_0^{2\\pi}\\!\\!\\int_0^4 r\\,dr\\,d\\theta = 16\\pi$", "$\\displaystyle\\int_0^{\\pi}\\!\\!\\int_0^2 r\\,dr\\,d\\theta = 2\\pi$"],
+      "answer": 0,
+      "explanation": "Στις πολικές **πάντα** $dx\\,dy = r\\,dr\\,d\\theta$ (Ιακωβιανή). Ακτίνα ως 2 (όχι 4!): $\\int_0^{2\\pi}d\\theta \\int_0^2 r\\,dr = 2\\pi \\cdot 2 = 4\\pi$ = εμβαδόν δίσκου ✓",
+      "source": "Θεωρία μαθήματος — starter"
+    },
+    {
+      "id": "m2-mcq-03",
+      "type": "mcq",
+      "topic": "διαφορικές εξισώσεις",
+      "difficulty": 2,
+      "question": "Η γενική λύση της $y'' - 5y' + 6y = 0$ είναι:",
+      "choices": ["$y = C_1 e^{2x} + C_2 e^{3x}$", "$y = C_1 e^{-2x} + C_2 e^{-3x}$", "$y = (C_1 + C_2 x)e^{5x}$", "$y = C_1\\cos 2x + C_2\\sin 3x$"],
+      "answer": 0,
+      "explanation": "Χαρακτηριστική: $\\lambda^2 - 5\\lambda + 6 = 0 \\Rightarrow (\\lambda-2)(\\lambda-3) = 0$. Δύο πραγματικές ρίζες 2, 3 → γραμμικός συνδυασμός εκθετικών.",
+      "source": "Θεωρία μαθήματος — starter"
+    },
+    {
+      "id": "m2-mcq-04",
+      "type": "mcq",
+      "topic": "σειρές",
+      "difficulty": 2,
+      "question": "Η ακτίνα σύγκλισης της δυναμοσειράς $\\displaystyle\\sum_{n=1}^{\\infty} \\frac{x^n}{n\\,2^n}$ είναι:",
+      "choices": ["$R = 2$", "$R = 1/2$", "$R = 1$", "$R = \\infty$"],
+      "answer": 0,
+      "explanation": "Κριτήριο λόγου: $\\lim\\left|\\frac{a_{n+1}}{a_n}\\right| = \\lim \\frac{n}{2(n+1)} = \\frac{1}{2}$ → $R = 2$. (Στο $x=2$ αποκλίνει — αρμονική· στο $x=-2$ συγκλίνει — εναλλάσσουσα.)",
+      "source": "Θεωρία μαθήματος — starter"
+    },
+    {
+      "id": "m2-fc-01",
+      "type": "flashcard",
+      "topic": "μερικές παράγωγοι",
+      "front": "Κλίση (gradient), παράγωγος κατά κατεύθυνση, και πότε μεγιστοποιείται;",
+      "back": "$$\\nabla f = \\left(\\frac{\\partial f}{\\partial x}, \\frac{\\partial f}{\\partial y}, \\frac{\\partial f}{\\partial z}\\right)$$\n$$D_{\\hat u}f = \\nabla f \\cdot \\hat u$$\nΜέγιστη όταν $\\hat u \\parallel \\nabla f$, με τιμή $|\\nabla f|$. Η $\\nabla f$ είναι κάθετη στις ισοσταθμικές."
+    },
+    {
+      "id": "m2-fc-02",
+      "type": "flashcard",
+      "topic": "ακρότατα",
+      "front": "Κριτήριο 2ης παραγώγου για ακρότατα $f(x,y)$ σε κρίσιμο σημείο;",
+      "back": "$$\\Delta = f_{xx}f_{yy} - f_{xy}^2$$\n• $\\Delta > 0,\\ f_{xx} > 0$ → τοπικό ελάχιστο\n• $\\Delta > 0,\\ f_{xx} < 0$ → τοπικό μέγιστο\n• $\\Delta < 0$ → σαγματικό σημείο\n• $\\Delta = 0$ → αδιάφορο (χρειάζεται άλλη μελέτη)\n\nΜε δεσμεύσεις: πολλαπλασιαστές Lagrange $\\nabla f = \\lambda\\nabla g$."
+    },
+    {
+      "id": "m2-fc-03",
+      "type": "flashcard",
+      "topic": "διαφορικές εξισώσεις",
+      "front": "Λύση γραμμικής ΔΕ 1ης τάξης $y' + P(x)y = Q(x)$;",
+      "back": "Ολοκληρωτικός παράγοντας: $\\mu(x) = e^{\\int P\\,dx}$\n$$y = \\frac{1}{\\mu(x)}\\left[\\int \\mu(x)Q(x)\\,dx + C\\right]$$\nΈλεγχος: $(\\mu y)' = \\mu Q$."
+    },
+    {
+      "id": "m2-fc-04",
+      "type": "flashcard",
+      "topic": "σειρές",
+      "front": "Αναπτύγματα Maclaurin: $e^x$, $\\sin x$, $\\cos x$, $\\frac{1}{1-x}$;",
+      "back": "$$e^x = \\sum_{n=0}^{\\infty}\\frac{x^n}{n!} \\qquad \\frac{1}{1-x} = \\sum_{n=0}^{\\infty}x^n \\ (|x|<1)$$\n$$\\sin x = x - \\frac{x^3}{3!} + \\frac{x^5}{5!} - \\dots \\qquad \\cos x = 1 - \\frac{x^2}{2!} + \\frac{x^4}{4!} - \\dots$$"
+    },
+    {
+      "id": "m2-fc-05",
+      "type": "flashcard",
+      "topic": "διπλά ολοκληρώματα",
+      "front": "Αλλαγή μεταβλητών σε διπλό ολοκλήρωμα — τι μπαίνει στο ολοκλήρωμα;",
+      "back": "$$\\iint_D f(x,y)\\,dx\\,dy = \\iint_{D'} f(x(u,v), y(u,v))\\,\\left|J\\right|\\,du\\,dv$$\nόπου $J = \\dfrac{\\partial(x,y)}{\\partial(u,v)}$ η Ιακωβιανή ορίζουσα.\n\nΠολικές: $|J| = r$. Σφαιρικές (τριπλά): $|J| = \\rho^2\\sin\\varphi$."
+    },
+    {
+      "id": "m2-st-01",
+      "type": "steps",
+      "topic": "διπλά ολοκληρώματα",
+      "difficulty": 2,
+      "title": "Διπλό ολοκλήρωμα σε πολικές συντεταγμένες",
+      "intro": "Να υπολογιστεί το $\\displaystyle I = \\iint_D e^{-(x^2+y^2)}\\,dx\\,dy$, όπου $D$ ο δίσκος $x^2 + y^2 \\leq 1$.\n\n(Τυπικό μοτίβο θεμάτων — το ίδιο ολοκλήρωμα σε καρτεσιανές είναι αδύνατο αναλυτικά!)",
+      "source": "Starter — τυπικό μοτίβο εξετάσεων",
+      "steps": [
+        {
+          "prompt": "Σε πολικές συντεταγμένες, το $e^{-(x^2+y^2)}\\,dx\\,dy$ γίνεται:",
+          "choices": ["$e^{-r^2}\\, r\\,dr\\,d\\theta$", "$e^{-r^2}\\,dr\\,d\\theta$", "$e^{-r}\\, r\\,dr\\,d\\theta$", "$e^{-r^2}\\, r^2\\,dr\\,d\\theta$"],
+          "answer": 0,
+          "explanation": "$x^2+y^2 = r^2$ και η Ιακωβιανή δίνει τον παράγοντα $r$. Αυτό το $r$ είναι που «ξεκλειδώνει» το ολοκλήρωμα!"
+        },
+        {
+          "prompt": "Το εσωτερικό ολοκλήρωμα είναι $\\int_0^1 r e^{-r^2} dr$. Ποια είναι η τιμή του; (3 δεκαδικά — hint: αντικατάσταση $u = r^2$)",
+          "input": { "value": 0.316, "tolerance": 0.002, "unit": "" },
+          "explanation": "$u = r^2,\\ du = 2r\\,dr$: $\\frac{1}{2}\\int_0^1 e^{-u}du = \\frac{1-e^{-1}}{2} = \\frac{1-0.3679}{2} \\approx 0.316$."
+        },
+        {
+          "prompt": "Το τελικό αποτέλεσμα $I = \\int_0^{2\\pi} d\\theta \\cdot 0.316 = \\pi(1 - e^{-1})$. Αριθμητικά; (2 δεκαδικά)",
+          "input": { "value": 1.99, "tolerance": 0.02, "unit": "" },
+          "explanation": "$I = 2\\pi \\cdot \\frac{1-e^{-1}}{2} = \\pi(1-e^{-1}) \\approx 3.1416 \\times 0.6321 \\approx \\mathbf{1.99}$."
+        }
+      ]
+    }
+  ]
+}

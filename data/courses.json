@@ -1,0 +1,85 @@
+{
+  "courses": [
+    {
+      "id": "c",
+      "name": "C Programming",
+      "greek": "Αρχές Προγραμματισμού",
+      "short": "C",
+      "icon": "💻",
+      "color": "#6c8cff",
+      "examDate": null
+    },
+    {
+      "id": "pse",
+      "name": "Digital Control Systems",
+      "greek": "Ψηφιακά Συστήματα Ελέγχου (ΨΣΕ)",
+      "short": "ΨΣΕ",
+      "icon": "📡",
+      "color": "#3ecf8e",
+      "examDate": null
+    },
+    {
+      "id": "isxuos",
+      "name": "Power Circuit Analysis",
+      "greek": "Ανάλυση Κυκλωμάτων Ισχύος",
+      "short": "Ισχύος",
+      "icon": "⚡",
+      "color": "#ffb84d",
+      "examDate": null
+    },
+    {
+      "id": "math2",
+      "name": "Mathematics 2",
+      "greek": "Μαθηματικά ΙΙ",
+      "short": "Μαθ2",
+      "icon": "∫",
+      "color": "#ff6b9d",
+      "examDate": null
+    },
+    {
+      "id": "numan",
+      "name": "Numerical Analysis",
+      "greek": "Αριθμητική Ανάλυση",
+      "short": "ΑρΑν",
+      "icon": "🔢",
+      "color": "#b78cff",
+      "examDate": null
+    },
+    {
+      "id": "mhx2",
+      "name": "Electrical Machines 2",
+      "greek": "Ηλεκτρικές Μηχανές ΙΙ",
+      "short": "Μηχ2",
+      "icon": "⚙️",
+      "color": "#4dd0e1",
+      "examDate": null
+    },
+    {
+      "id": "vlsi",
+      "name": "VLSI 1",
+      "greek": "Σχεδίαση VLSI Ι",
+      "short": "VLSI",
+      "icon": "🖥️",
+      "color": "#ff8a65",
+      "examDate": null
+    },
+    {
+      "id": "graphics",
+      "name": "Computer Graphics",
+      "greek": "Γραφικά Υπολογιστών",
+      "short": "Γραφ",
+      "icon": "🎨",
+      "color": "#81c784",
+      "examDate": null
+    },
+    {
+      "id": "mining",
+      "name": "Data Mining",
+      "greek": "Εξόρυξη Δεδομένων",
+      "short": "Εξόρ",
+      "icon": "⛏️",
+      "color": "#90a4ae",
+      "examDate": null
+    }
+  ]
+}

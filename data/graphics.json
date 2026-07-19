@@ -1,0 +1,95 @@
+{
+  "course": "graphics",
+  "questions": [
+    {
+      "id": "gr-mcq-01",
+      "type": "mcq",
+      "topic": "μετασχηματισμοί",
+      "difficulty": 1,
+      "question": "Γιατί η γραφική με υπολογιστές χρησιμοποιεί **ομογενείς συντεταγμένες** (4×4 πίνακες σε 3D);",
+      "choices": ["Για να εκφράζεται και η μετατόπιση ως πολλαπλασιασμός πίνακα", "Για μεγαλύτερη ακρίβεια πράξεων", "Για συμβατότητα με την GPU μόνο", "Για εξοικονόμηση μνήμης"],
+      "answer": 0,
+      "explanation": "Η μετατόπιση ΔΕΝ είναι γραμμικός μετασχηματισμός στο $\\mathbb{R}^3$ — με την 4η συντεταγμένη $w$ γίνεται πίνακας, οπότε ολόκληρη η αλυσίδα Model→View→Projection συντίθεται σε **έναν** πολλαπλασιασμό.",
+      "source": "Θεωρία μαθήματος — starter"
+    },
+    {
+      "id": "gr-mcq-02",
+      "type": "mcq",
+      "topic": "pipeline",
+      "difficulty": 2,
+      "question": "Ποια είναι η σωστή σειρά μετασχηματισμών μιας κορυφής στο pipeline;",
+      "choices": ["Model → View → Projection → Viewport", "View → Model → Projection → Viewport", "Projection → Model → View → Viewport", "Model → Projection → View → Viewport"],
+      "answer": 0,
+      "explanation": "Τοπικές → παγκόσμιες (Model) → συντεταγμένες κάμερας (View) → clip/NDC (Projection) → οθόνη (Viewport). Στο OpenGL συχνά ως ενιαίο MVP: $P \\cdot V \\cdot M \\cdot v$.",
+      "source": "Θεωρία μαθήματος — starter"
+    },
+    {
+      "id": "gr-mcq-03",
+      "type": "mcq",
+      "topic": "απόκρυψη",
+      "difficulty": 2,
+      "question": "Ο αλγόριθμος z-buffer λύνει το πρόβλημα της απόκρυψης επιφανειών:",
+      "choices": ["Κρατώντας ανά pixel το μικρότερο βάθος και γράφοντας μόνο ό,τι είναι πιο κοντά", "Ταξινομώντας όλα τα πολύγωνα πριν τη σχεδίαση", "Υπολογίζοντας ακτίνες από την κάμερα", "Αφαιρώντας τα πίσω πολύγωνα μόνο (back-face culling)"],
+      "answer": 0,
+      "explanation": "Για κάθε fragment: αν $z < z_{buffer}[x,y]$ τότε γράψε χρώμα & ενημέρωσε βάθος. Απλός, ανά-pixel, χωρίς ταξινόμηση — γι' αυτό είναι το πρότυπο του hardware.",
+      "source": "Θεωρία μαθήματος — starter"
+    },
+    {
+      "id": "gr-mcq-04",
+      "type": "mcq",
+      "topic": "φωτισμός",
+      "difficulty": 2,
+      "question": "Η διαφορά σκίασης **Gouraud** και **Phong** είναι:",
+      "choices": ["Gouraud: χρώμα ανά κορυφή + παρεμβολή· Phong: παρεμβολή καθέτων + φωτισμός ανά pixel", "Gouraud: ανά pixel· Phong: ανά κορυφή", "Καμία — συνώνυμα", "Gouraud μόνο για σημειακά φώτα"],
+      "answer": 0,
+      "explanation": "Το Phong shading παρεμβάλλει τα **κάθετα διανύσματα** και υπολογίζει το μοντέλο φωτισμού σε κάθε pixel → σωστά specular highlights, ακριβότερο. (Μην το μπερδεύεις με το «μοντέλο φωτισμού Phong»: ambient+diffuse+specular.)",
+      "source": "Θεωρία μαθήματος — starter"
+    },
+    {
+      "id": "gr-mcq-05",
+      "type": "mcq",
+      "topic": "OpenGL",
+      "difficulty": 2,
+      "question": "Στο σύγχρονο OpenGL (όπως στα labs με CMake/GLFW), τα δεδομένα κορυφών ανεβαίνουν στην GPU μέσω:",
+      "choices": ["VBO (Vertex Buffer Object) δεμένο σε VAO", "glBegin/glEnd", "display lists", "uniform μεταβλητών"],
+      "answer": 0,
+      "explanation": "Το VBO κρατά τα δεδομένα στη μνήμη της GPU, το VAO περιγράφει το layout (glVertexAttribPointer), και τα shaders (vertex/fragment) τα επεξεργάζονται. Το glBegin/glEnd είναι το παλιό immediate mode.",
+      "source": "Εργαστήριο (lab02/lab03) — starter"
+    },
+    {
+      "id": "gr-fc-01",
+      "type": "flashcard",
+      "topic": "μετασχηματισμοί",
+      "front": "Πίνακες 4×4: μετατόπιση κατά $(t_x,t_y,t_z)$ και κλιμάκωση $(s_x,s_y,s_z)$;",
+      "back": "$$T = \\begin{bmatrix} 1&0&0&t_x \\\\ 0&1&0&t_y \\\\ 0&0&1&t_z \\\\ 0&0&0&1 \\end{bmatrix} \\qquad S = \\begin{bmatrix} s_x&0&0&0 \\\\ 0&s_y&0&0 \\\\ 0&0&s_z&0 \\\\ 0&0&0&1 \\end{bmatrix}$$\nΠροσοχή στη σειρά: $T\\cdot R \\neq R\\cdot T$. Περιστροφή γύρω από σημείο $p$: $T_p R T_{-p}$."
+    },
+    {
+      "id": "gr-fc-02",
+      "type": "flashcard",
+      "topic": "προβολές",
+      "front": "Διαφορά ορθογραφικής και προοπτικής προβολής;",
+      "back": "**Ορθογραφική**: παράλληλες ακτίνες, το μέγεθος δεν εξαρτάται από το βάθος — CAD, 2D.\n\n**Προοπτική**: ακτίνες από το κέντρο προβολής, διαίρεση με $w$ (perspective divide) → τα μακρινά μικραίνουν — ρεαλισμός.\n\nΣτο OpenGL: glm::ortho() vs glm::perspective(fov, aspect, near, far)."
+    },
+    {
+      "id": "gr-fc-03",
+      "type": "flashcard",
+      "topic": "φωτισμός",
+      "front": "Το μοντέλο φωτισμού Phong (οι 3 όροι);",
+      "back": "$$I = k_a I_a + k_d I_l (\\hat N \\cdot \\hat L) + k_s I_l (\\hat R \\cdot \\hat V)^n$$\n• **Ambient**: σταθερός περιβάλλοντος\n• **Diffuse** (Lambert): εξαρτάται από γωνία φωτός–καθέτου\n• **Specular**: γυαλάδα, εκθέτης n = shininess\n\n$\\hat R$ = ανάκλαση του $\\hat L$ γύρω από το $\\hat N$."
+    },
+    {
+      "id": "gr-fc-04",
+      "type": "flashcard",
+      "topic": "rasterization",
+      "front": "Τι κάνει ο αλγόριθμος Bresenham και γιατί είναι γρήγορος;",
+      "back": "Σχεδιάζει ευθεία επιλέγοντας σε κάθε βήμα το επόμενο pixel με βάση μια **ακέραια** μεταβλητή απόφασης (σφάλμα) — μόνο προσθέσεις/συγκρίσεις, καθόλου πραγματικοί αριθμοί ή διαιρέσεις.\n\nΕπεκτείνεται σε κύκλους (midpoint circle)."
+    },
+    {
+      "id": "gr-fc-05",
+      "type": "flashcard",
+      "topic": "OpenGL",
+      "front": "Ρόλοι vertex shader και fragment shader;",
+      "back": "**Vertex shader**: τρέχει ανά κορυφή — μετασχηματισμοί (gl_Position = MVP × pos), πέρασμα attributes.\n\n**Fragment shader**: τρέχει ανά fragment/pixel — χρώμα, φωτισμός, textures.\n\nΕνδιάμεσα: rasterization με παρεμβολή των varyings."
+    }
+  ]
+}
